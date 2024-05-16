@@ -1,1 +1,246 @@
-    <h1>HELLO from Authors</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <div class="frame">
+      <div class="main_frame">
+        <div class="left_frame">
+          <div class="left_1">
+            <div class="left_1-1">
+              <img
+                src="images/Profile.png"
+                width="156px"
+                height="142px"
+                alt="main-pic"
+              />
+            </div>
+            <div class="left_1-2"><%=user.name%></div>
+            <div class="left_1-3"><%=user.profession%></div>
+            <div class="left_icons">
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Facebook.jpeg" alt="" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Facebook.jpeg" alt="" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Facebook.jpeg" alt="" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Facebook.jpeg" alt="" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Facebook.jpeg" alt="" />
+                </div>
+              </a>
+              <a class="link_href" href="">
+                <div class="icon">
+                  <img src="icon/Facebook.jpeg" alt="" />
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_2">
+            <div class="key-val-container">
+              <span class="text-keys">Age:</span>
+              <span class="text-value"><%= user.age %></span>
+            </div>
+            <div class="key-val-container">
+              <span class="text-keys">Residence:</span>
+              <span class="text-value"><%= user.residence %></span>
+            </div>
+            <div class="key-val-container">
+              <span class="text-keys">Freelance:</span>
+              <span class="text-value" style="color: green">Available</span>
+            </div>
+            <div class="key-val-container">
+              <span class="text-keys">Address:</span>
+              <span class="text-value"><%= user.address %></span>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_3">
+            <h5>Languages</h5>
+            <div class="progress">
+              <div class="key-val-container">
+                <span><%=user.Languages[1]%></span>
+                <span>100%</span>
+              </div>
+              <div>
+                <img src="progress/Line.svg" alt="" />
+              </div>
+            </div>
+            <div class="progress">
+              <div class="key-val-container">
+                <span><%=user.Languages[0]%></span>
+                <span>80%</span>
+              </div>
+              <div>
+                <img src="progress/l80.svg" alt="" />
+              </div>
+            </div>
+            <div class="progress">
+              <div class="key-val-container">
+                <span><%=user.Languages[2]%></span>
+                <span>60%</span>
+              </div>
+              <div>
+                <img src="progress/l60.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_4">
+            <h5>Skills</h5>
+
+            <div class="progress">
+              <div class="key-val-container">
+                <span><%=user.skills[0]%></span>
+                <span>100%</span>
+              </div>
+              <div>
+                <img src="progress/Line.svg" alt="" />
+              </div>
+            </div>
+            <div class="progress">
+              <div class="key-val-container">
+                <span><%=user.skills[1]%></span>
+                <span>100%</span>
+              </div>
+              <div>
+                <img src="progress/Line.svg" alt="" />
+              </div>
+            </div>
+            <div class="progress">
+              <div class="key-val-container">
+                <span><%=user.skills[2]%></span>
+                <span>75%</span>
+              </div>
+              <div>
+                <img src="progress/l75.svg" alt="" />
+              </div>
+            </div>
+            <div class="progress">
+              <div class="key-val-container">
+                <span><%=user.skills[3]%></span>
+                <span>80%</span>
+              </div>
+              <div>
+                <img src="progress/l80.svg" alt="" />
+              </div>
+            </div>
+            <div class="progress">
+              <div class="key-val-container">
+                <span><%=user.skills[4]%></span>
+                <span>75%</span>
+              </div>
+              <div>
+                <img src="progress/l75.svg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="marginer"></div>
+          <div class="left_5">
+            <h5>Extra Skills</h5>
+
+            <% user.extra_skills.forEach(skill => { %>
+            <div class="extra-container">
+              <img src="progress/icons.svg" alt="Icon" />
+              <span><%= skill %></span>
+            </div>
+            <% }) %>
+          </div>
+          <div class="marginer"></div>
+        </div>
+        <div class="midd_frame">
+          <div id="midd_frame">
+            <img src="btn_icon/Polygon1.svg" alt="" class="springkle1" />
+            <img src="btn_icon/Ellipse 15.svg" alt="" class="springkle2" />
+            <img src="btn_icon/Ellipse 16.svg" alt="" class="springkle3" />
+            <img src="btn_icon/Ellipse 12.svg" alt="" class="springkle5" />
+            <img src="btn_icon/Rectangle 52.svg" alt="" class="springkle4" />
+            <img src="btn_icon/Rectangle 52.svg" alt="" class="springkle6" />
+
+            <div class="wrapper">
+              <h1><%= user.profession %> in <%=user.work_place%></h1>
+              <p><%=user.about_me%></p>
+              <button>HIRE ME -></button>
+            </div>
+            <div class="img-container">
+              <img style="width: 100%" src="images/standing-image.png" alt="" />
+            </div>
+          </div>
+          <div class="services">
+            <h1>My Services</h1>
+            <p><%=user.service_desc%></p>
+            <div class="myservice-container">
+              <div class="myservice">
+                <img src="box_images/coding.svg" alt="" />
+                <h5>Web development</h5>
+                <p>Blog, E-commerce</p>
+              </div>
+              <div class="myservice">
+                <img src="box_images/illustration.svg" alt="" />
+                <h5>UI/UX Design</h5>
+                <p>Mobile app, website design</p>
+              </div>
+              <div class="myservice">
+                <img src="box_images/microphone.svg" alt="" />
+                <h5>Sound Design</h5>
+                <p>Voice Over, Beat Making</p>
+              </div>
+              <div class="myservice">
+                <img src="box_images/game-development.svg" alt="" />
+                <h5>Game Design</h5>
+                <p>Character Design, Props & Objects</p>
+              </div>
+              <div class="myservice">
+                <img src="box_images/photographer.svg" alt="" />
+                <h5>photography</h5>
+                <p>portrait, product photography</p>
+              </div>
+              <div class="myservice">
+                <h5>Advertising</h5>
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae
+                  nulla diam in ac dictum a urna
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="right_frame">
+          <img src="menu_icon/contrast.svg" alt="" />
+          <div class="right-icons">
+            <img class="home-icon" src="menu_icon/home.svg" alt="" />
+            <img class="right-icon" src="menu_icon/Blog.svg" alt="" />
+            <img class="right-icon" src="menu_icon/Contact.svg" alt="" />
+            <img class="right-icon" src="menu_icon/Cv.svg" alt="" />
+            <img class="right-icon" src="menu_icon/Portfolio.svg" alt="" />
+            <img class="right-icon" src="menu_icon/Cv.svg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
