@@ -378,3 +378,7 @@ h5 {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
+
+a{
+  text-decoration: none;
+}
