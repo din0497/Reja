@@ -5,13 +5,20 @@
   "residence": "S.Korea",
   "adress": "S.Korea, Seoul",
   "Languages": ["Uzbek", "Korean", "English"],
-  "skills": ["Html", "Css", "Js", "NodeJS", "Python"],
+  "skills": [
+    { "title": "Html", "prog": "100" },
+    { "title": "CSS", "prog": "100" },
+    { "title": "JS", "prog": "75" },
+    { "title": "NodeJS", "prog": "80" },
+    { "title": "Python", "prog": "75" }
+  ],
   "extra_skills": [
     "Bootstrap, Materialize",
     "Styling, Sass",
     "Django, Flask",
     "GIT Knowledge"
   ],
+  "icons": ["Home", "Blog", "Contact", "Cv", "Portfolio", "Services"],
   "work_place": "IT Company",
   "service_desc": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat",
   "about_me": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et, volutpat feugiat placerat lobortis. Natoq",
@@ -45,5 +52,32 @@
     "9$"
   ],
   "famous_words": ["World is Beautiful with Flowers"],
-  "famous_name": ["'Steve Jobs"]
+  "famous_name": ["'Steve Jobs"],
+  "services": [
+    {
+      "title": "Web development",
+      "desc": "Blog, E-commerce",
+      "icon": "coding"
+    },
+    {
+      "title": "UI/UX Design",
+      "desc": "Mobile app, website design",
+      "icon": "illustration"
+    },
+    {
+      "title": "Sound Design",
+      "desc": "Voice Over, Beat Making",
+      "icon": "microphone"
+    },
+    {
+      "title": "Game Design",
+      "desc": "Character Design, Props & Objects",
+      "icon": "game-development"
+    },
+    {
+      "title": "Photography",
+      "desc": "Portrait, product photography",
+      "icon": "photographer"
+    }
+  ]
 }

@@ -3,16 +3,20 @@ const express = require("express");
 const app = express();
 const http = require("http");
 const fs = require("fs");
+const path = require('path')
 
 let user;
 
 fs.readFile("database/user.json", "utf8", (err, data) => {
   if (err) {
-    console.log("err", err);
+    console.log("err here", err);
   } else {
     user = JSON.parse(data);
   }
 });
+
+
+
 
 console.log(express.static("public"));
 // 1: Kirish code
