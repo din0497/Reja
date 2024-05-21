@@ -68,7 +68,7 @@ const list = [
 
 // CALLBACK function
 
-/* async function maslahatBering(a, callBack) {
+/* function maslahatBering(a, callBack) {
   if (typeof a !== "number") throw new Error("Insert Number");
   else if (a <= 20) callBack(null, list[0]);
   else if (a > 20 && a <= 30) callBack(null, list[1]);
@@ -135,3 +135,6 @@ console.log("Passed here 1");  */
 run();
 
  */
+
+
+
