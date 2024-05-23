@@ -1,5 +1,15 @@
-const inquirer = require('inquirer');
+const inquirer = require("inquirer");
 
+/* B-TASK: 
+
+Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda qatnashgan raqamlarni sonini bizga return qilsin.
+MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
+ */
+
+const countDigits = (str) => {
+  const number = str.replace(/\D/g, ""); // teksning raqamlarini filter qilib beradi
+  return number.length;
+};
 
 /* A-TASK: 
 
@@ -8,50 +18,40 @@ MASALAN countLetter("e", "engineer") 3ni return qiladi.
 
 masalani yechimi: */
 
-const countLetter = (letter, text) => {
+/* const countLetter = (letter, text) => {
   let result = 0;
   for (ele of text) {
     ele === letter ? result++ : null;
   }
   return result;
 };
-
-
-
-
+ */
 
 inquirer
   .prompt([
     {
-      type: 'input',
-      name: 'letter',
-      message: 'Sanashni istagan harfingizni kiriting:',
+      type: "input",
+      name: "string",
+      message: "Raqamlar aralashgan string kiriting:",
     },
-    {
+    /*  {
       type: 'input',
       name: 'text',
       message: 'Tekst kiriting:',
-    },
+    }, */
   ])
   .then((answers) => {
-    const letter = answers.letter.toUpperCase(); 
-    const text = answers.text.toUpperCase();
-    const count = countLetter(letter, text);
-    
-    console.log(`Siz kiritgan '${letter}', kiritilgan tekst ichida  ${count} marta ishtirok etgan!`);
+    const str = answers.string;
+    /*  const text = answers.text.toUpperCase(); */
+    const count = countDigits(str);
+
+    console.log(
+      `Siz kiritgan '${str}' ichida  ${count}ta raqam ishtirok etgan!`
+    );
   })
   .catch((error) => {
-    console.error('An error occurred:', error);
+    console.error("An error occurred:", error);
   });
-
-
-
-
-
-
-
-
-
 
 // [21-22] NodeJS event loop, Callback, Asynchronous functionlar
 
@@ -135,6 +135,3 @@ console.log("Passed here 1");  */
 run();
 
  */
-
-
-

@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 const fs = require("fs");
 
-
 let user;
 
 fs.readFile("database/user.json", "utf8", (err, data) => {
@@ -34,10 +33,10 @@ app.set("view engine", "ejs");
 app.post("/create-item", (req, res) => {
   const new_reja = req.body.reja;
   console.log(req.body);
-  db.collection("plans").insertOne({ reja: new_reja },(err,data)=> {
-    if(err)console.log(err);
-    else{
-      res.end('success')
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) console.log(err);
+    else {
+      res.end("success");
     }
   });
 });
@@ -47,15 +46,17 @@ app.get("/author", (req, res) => {
 });
 
 app.get("/", function (req, res) {
+  console.log("users entered /");
   db.collection("plans")
     .find()
     .toArray((err, data) => {
-      if (err) console.log(err);
-      else {
-        console.log(data);
+      if (err) {
+        console.log(err);
+        res.end("something went wrong");
+      } else {
+        res.render('reja', {items: data})
       }
     });
-  res.render("reja");
 });
 
 module.exports = app;
