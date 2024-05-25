@@ -1,4 +1,46 @@
 const inquirer = require("inquirer");
+const moment = require("moment");
+
+/* MITASK-C 
+
+Shunday class tuzing tuzing nomi Shop, va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning 3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul. Har bir method ishga tushgan vaqt ham log qilinsin.
+MASALAN: const shop = new Shop(4, 5, 2); shop.qoldiq() return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud! shop.sotish('non', 3) & shop.qabul('cola', 4) & shop.qoldiq() return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+
+*/
+
+class Shop {
+  constructor(non, lagman, cola) {
+    (this.non = non), (this.lagman = lagman), (this.cola = cola);
+  }
+
+  timeUpdate() {
+    return moment().format("HH:mm");
+  }
+  qoldiq() {
+    const time = this.timeUpdate();
+
+    console.log(
+      `Hozir ${time}da ${this.non}ta non, ${this.lagman}ta lagmon va ${this.cola}ta cola mavjud! `
+    );
+  }
+
+  sotish(name, amount) {
+    const time = this.timeUpdate();
+    this[name] -= amount;
+    console.log(`${time}da, ${name}dan ${amount}ta sotildi!`);
+  }
+  qabul(name, amount) {
+    const time = this.timeUpdate();
+    this[name] += amount;
+    console.log(`${time}da, ${name}dan ${amount}ta qo'shildi!`);
+  }
+}
+
+const shop = new Shop(4, 5, 2);
+shop.sotish("non", 3);
+shop.qabul("cola", 4);
+
+shop.qoldiq();
 
 /* B-TASK: 
 
@@ -6,10 +48,10 @@ Shunday function tuzing, u 1ta string parametrga ega bolsin, hamda osha stringda
 MASALAN countDigits("ad2a54y79wet0sfgb9") 7ni return qiladi.
  */
 
-const countDigits = (str) => {
+/* const countDigits = (str) => {
   const number = str.replace(/\D/g, ""); // teksning raqamlarini filter qilib beradi
   return number.length;
-};
+}; */
 
 /* A-TASK: 
 
@@ -27,22 +69,22 @@ masalani yechimi: */
 };
  */
 
-inquirer
+/* inquirer
   .prompt([
     {
       type: "input",
       name: "string",
       message: "Raqamlar aralashgan string kiriting:",
     },
-    /*  {
-      type: 'input',
-      name: 'text',
-      message: 'Tekst kiriting:',
-    }, */
+    {
+      type: "input",
+      name: "text",
+      message: "Tekst kiriting:",
+    },
   ])
   .then((answers) => {
     const str = answers.string;
-    /*  const text = answers.text.toUpperCase(); */
+    const text = answers.text.toUpperCase(); 
     const count = countDigits(str);
 
     console.log(
@@ -51,7 +93,9 @@ inquirer
   })
   .catch((error) => {
     console.error("An error occurred:", error);
-  });
+  }); */
+
+/* ========================================================================== */
 
 // [21-22] NodeJS event loop, Callback, Asynchronous functionlar
 
