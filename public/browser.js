@@ -21,6 +21,7 @@ const itemTemplate = (item) => {
 };
 
 let createField = document.getElementById("create-field");
+const ul = document.getElementById("item-list");
 
 document.getElementById("create-form").addEventListener("submit", (e) => {
   e.preventDefault();
@@ -39,6 +40,7 @@ document.getElementById("create-form").addEventListener("submit", (e) => {
 });
 
 document.addEventListener("click", (e) => {
+  /// delete
   if (e.target.classList.contains("delete-me")) {
     if (confirm("Jonibek o`chirurib zerikdizmi ?"))
       axios
@@ -48,10 +50,37 @@ document.addEventListener("click", (e) => {
           e.target.parentElement.parentElement.remove();
         })
         .catch((err) => {
-            console.log(err, "qayta harakat qil");
+          console.log(err, "qayta harakat qil");
         });
   }
+  /// edit
   if (e.target.classList.contains("edit-me")) {
-    console.log("iam edit");
+    let userInput = prompt(
+      "Please update?",
+      e.target.parentElement.parentElement.querySelector(".item-text").innerText
+    );
+    if (userInput) {
+      axios
+        .post("/edit-item", {
+          id: e.target.dataset.id,
+          new_input: userInput,
+        })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.querySelector(
+            ".item-text"
+          ).innerText = userInput;
+        })
+        .catch((err) => {
+          console.log("qayta harakat qil");
+        });
+    }
   }
+});
+
+document.getElementById("clear-all").addEventListener("click", () => {
+  axios.post("/delete-all", { delete_all: true }).then((response) => {
+    alert(response.data.state);
+    ul.remove();
+  });
 });
