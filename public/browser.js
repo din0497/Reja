@@ -79,8 +79,13 @@ document.addEventListener("click", (e) => {
 });
 
 document.getElementById("clear-all").addEventListener("click", () => {
-  axios.post("/delete-all", { delete_all: true }).then((response) => {
-    alert(response.data.state);
-    ul.remove();
-  });
+  axios
+    .post("/delete-all", { delete_all: true })
+    .then((response) => {
+      alert(response.data.state);
+      ul.remove();
+    })
+    .catch((err) => {
+      console.log("Something went wrong!");
+    });
 });
