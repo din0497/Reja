@@ -82,7 +82,9 @@ document.getElementById("clear-all").addEventListener("click", () => {
   axios
     .post("/delete-all", { delete_all: true })
     .then((response) => {
+      console.log('Step 1');
       alert(response.data.state);
+      console.log('Step 3');
       ul.remove();
     })
     .catch((err) => {

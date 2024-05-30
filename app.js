@@ -1,5 +1,4 @@
 console.log("Web Serverni boshlash!");
-const { log } = require("console");
 const express = require("express");
 const app = express();
 const fs = require("fs");
@@ -65,6 +64,7 @@ app.post("/edit-item", (req, res) => {
 });
 
 app.post("/delete-all", (req, res) => {
+  console.log('Step2');
   if (req.body.delete_all) {
     db.collection("plans").deleteMany(()=>{
       res.json({state:"hammasi delete"})
