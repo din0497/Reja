@@ -1,17 +1,19 @@
 /* 
-D-TASK: 
+E-TASK: 
 
-Shunday function tuzing, u 2ta string parametr ega bolsin, hamda agar har ikkala string bir hil harflardan iborat bolsa true aks holda false qaytarsin
-MASALAN checkContent("mitgroup", "gmtiprou") return qiladi true;
+Shunday function tuzing, u bitta string argumentni qabul qilib osha stringni teskari qilib return qilsin.
+MASALAN: getReverse("hello") return qilsin "olleh"
+
 
 */
 
-const checkContent = (str1, str2) => {
-  const sortedArr1 = str1.split("").sort().join();
-  const sortedArr2 = str2.split("").sort().join();
-
-  return sortedArr1 === sortedArr2;
+const getReverse = (txt) => {
+  let result = "";
+  for (i = txt.length - 1; i >= 0; i--) {
+    result += txt[i];
+  }
+  return result;
 };
 
-const isMatch = checkContent("mitgroup", "gmtiprou");
-console.log(isMatch);
+const result = getReverse("hello");
+console.log(result);
